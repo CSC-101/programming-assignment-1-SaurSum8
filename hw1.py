@@ -60,11 +60,38 @@ def rectangle_area(ret: data.Rectangle) -> float:
     return l * w
 
 # Part 6
+def books_by_author(an:str, lb:list[data.Book]) -> list[data.Book]:
+    ab = []
+    for i in lb:
+        if an in i.authors:
+            ab.append(i)
 
+    return ab
 
 # Part 7
+def circle_bound(ret: data.Rectangle) -> data.Circle:
+    cx = (ret.top_left.x + ret.bottom_right.x) / 2
+    cy = (ret.top_left.y + ret.bottom_right.y) / 2
 
+    r = ((ret.top_left.x - cx)**2 + ((ret.top_left.y - cy)**2))**(0.5)
+    p = data.Point(cx, cy)
+
+    C = data.Circle(p, r)
+
+    return C
 
 # Part 8
+def below_pay_average(elist: list[data.Employee]) -> list[str]:
+    s = 0
+    for i in elist:
+        s += i.pay_rate
 
+    if(len(elist) > 0):
+        s /= len(elist)
+    r = []
 
+    for i in elist:
+        if(i.pay_rate < s):
+            r.append(i.name)
+
+    return r
