@@ -38,6 +38,7 @@ def ascending_pairs(inpList: list[list[int]]) -> list[list[int]]:
     return ret
 
 
+
 # Part 4
 def add_prices(priceA: data.Price, priceB: data.Price) -> data.Price:
     nd = priceA.dollars + priceB.dollars
