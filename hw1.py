@@ -38,6 +38,7 @@ def ascending_pairs(inpList: list[list[int]]) -> list[list[int]]:
     return ret
 
 
+
 # Part 4
 def add_prices(priceA: data.Price, priceB: data.Price) -> data.Price:
     nd = priceA.dollars + priceB.dollars
@@ -49,6 +50,14 @@ def add_prices(priceA: data.Price, priceB: data.Price) -> data.Price:
     return ret
 
 # Part 5
+def rectangle_area(ret: data.Rectangle) -> float:
+    LP = ret.top_left
+    RP = ret.bottom_right
+
+    l = abs(LP.x - RP.x)
+    w = abs(LP.y - RP.y)
+
+    return l * w
 
 # Part 6
 

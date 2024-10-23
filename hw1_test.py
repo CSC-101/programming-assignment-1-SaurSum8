@@ -7,7 +7,7 @@ import unittest
 
 class TestCases(unittest.TestCase):
     # Part 1
-
+    pass
 
     # Part 2
 
