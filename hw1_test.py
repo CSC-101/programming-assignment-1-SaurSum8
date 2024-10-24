@@ -80,16 +80,75 @@ class TestCases(unittest.TestCase):
         self.assertEqual(actual, expected)
 
     # Part 6
+    def test_books_by_author_1(self):
+        b0 = data.Book(['Leshy', 'Grimora', 'Magnifus', 'P03'], "Inscryption")
+        b1 = data.Book(['Leshy'], "The Scrybe Of Beasts")
+        b2 = data.Book(['Luke', 'Dealer'], "Buckshot Roulette")
 
+        inp = [b0, b1, b2]
+        expected = [b0, b1]
+        actual = hw1.books_by_author("Leshy", inp)
+        self.assertEqual(actual, expected)
 
+    def test_books_by_author_2(self):
+        b0 = data.Book(['Leshy', 'Grimora', 'Magnifus', 'P03'], "Inscryption")
+        b1 = data.Book(['Leshy'], "The Scrybe Of Beasts")
+        b2 = data.Book(['Luke', 'Dealer'], "Buckshot Roulette")
+
+        inp = [b0, b1, b2]
+        expected = []
+        actual = hw1.books_by_author("Golly", inp)
+        self.assertEqual(actual, expected)
 
     # Part 7
+    def test_circle_bound_1(self):
+        pL = data.Point(0, 0)
+        pR = data.Point(6, 8)
 
+        pC = data.Point(3.0, 4.0)
+        inp = data.Rectangle(pL, pR)
+
+        expected = data.Circle(pC, 5.0)
+        actual = hw1.circle_bound(inp)
+        self.assertEqual(actual, expected)
+
+    def test_circle_bound_2(self):
+        pL = data.Point(0, 0)
+        pR = data.Point(0, 0)
+
+        pC = data.Point(0, 0)
+        inp = data.Rectangle(pL, pR)
+
+        expected = data.Circle(pC, 0.0)
+        actual = hw1.circle_bound(inp)
+        self.assertEqual(actual, expected)
 
     # Part 8
+    def test_below_pay_average_1(self):
+        e0 = data.Employee("Leshy", 100)
+        e1 = data.Employee("P03", 999)
+        e2 = data.Employee("Dealer", 700)
+        e3 = data.Employee("Grimora", 250)
+        e4 = data.Employee("Magnifus", 50)
 
+        inp = [e0,e1,e2,e3,e4]
+        expected = ["Leshy", "Grimora", "Magnifus"]
+        actual = hw1.below_pay_average(inp)
 
+        self.assertEqual(actual, expected)
 
+    def test_below_pay_average_2(self):
+        e0 = data.Employee("Leshy", 999)
+        e1 = data.Employee("P03", 999)
+        e2 = data.Employee("Dealer", 999)
+        e3 = data.Employee("Grimora", 999)
+        e4 = data.Employee("Magnifus", 999)
+
+        inp = [e0,e1,e2,e3,e4]
+        expected = []
+        actual = hw1.below_pay_average(inp)
+
+        self.assertEqual(actual, expected)
 
 
 if __name__ == '__main__':
