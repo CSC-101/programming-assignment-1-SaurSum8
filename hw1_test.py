@@ -138,13 +138,7 @@ class TestCases(unittest.TestCase):
         self.assertEqual(actual, expected)
 
     def test_below_pay_average_2(self):
-        e0 = data.Employee("Leshy", 999)
-        e1 = data.Employee("P03", 999)
-        e2 = data.Employee("Dealer", 999)
-        e3 = data.Employee("Grimora", 999)
-        e4 = data.Employee("Magnifus", 999)
-
-        inp = [e0,e1,e2,e3,e4]
+        inp = []
         expected = []
         actual = hw1.below_pay_average(inp)
 
